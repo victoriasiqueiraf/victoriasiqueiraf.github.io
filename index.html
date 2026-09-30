@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Portfólio de Victória Siqueira, designer em Recife: social media, identidade visual, embalagem, eventos e modelagem 3D.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Victória Siqueira · Designer">
+<meta property="og:description" content="Social media, identidade visual, embalagem, eventos e modelagem 3D.">
+<meta property="og:url" content="https://victoriasiqueiraf.github.io/">
+<meta property="og:image" content="https://victoriasiqueiraf.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E0E0E'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-weight='900' font-size='19' text-anchor='middle' fill='%23F2F0EB'%3EV%3C/text%3E%3C/svg%3E">
+<title>Victória Siqueira Portfólio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Abril+Fatface&family=Montserrat:wght@700;800&family=Nunito:wght@400;600;700&family=Fira+Sans:ital,wght@0,300;0,500;0,600;0,700;0,800;1,300&display=swap">
+<style>
+/* Layout: editorial suíço — hero dividido (título gigante à esquerda, nome à direita), letreiro de clientes, e cada projeto como linha de duas colunas: ficha fixa à esquerda, artes à direita */
+:root {
+  --bg: #F2F0EB;
+  --surface: #E8E5DE;
+  --ink: #0E0E0E;
+  --muted: #7A776F;
+  --line: #D6D2C8;
+  --live: #2F9E5B;
+  --logo-ground: #FFFFFF;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --strip-h: clamp(220px, 28vw, 400px);
+  --gutter: clamp(16px, 4vw, 44px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111110; --surface: #1C1B19; --ink: #F2F0EB; --muted: #8E8B83;
+    --line: #2C2A27; --live: #4CC27E; --logo-ground: #FFFFFF; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111110; --surface: #1C1B19; --ink: #F2F0EB; --muted: #8E8B83;
+  --line: #2C2A27; --live: #4CC27E; --logo-ground: #FFFFFF; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 400 15px/1.6 var(--font-display);
+  padding-inline: var(--gutter); padding-block: 0 72px;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.mono { font: 400 11px/1.6 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; }
+.muted { color: var(--muted); }
+.wrap { max-width: 1360px; margin-inline: auto; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 400 10.5px/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase;
+  padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink);
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 3px color-mix(in srgb, var(--live) 22%, transparent); }
+
+/* Barra superior */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 6;
+  margin-inline: calc(var(--gutter) * -1); padding: 14px var(--gutter);
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.top-inner { max-width: 1360px; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { font-weight: 600; font-size: 14px; letter-spacing: -.01em; text-decoration: none; white-space: nowrap; }
+.top nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.top nav a { text-decoration: none; white-space: nowrap; transition: background .15s, color .15s; }
+.top nav a small { color: var(--muted); }
+.top nav a:hover, .top nav a.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.top nav a.on small, .top nav a:hover small { color: inherit; opacity: .6; }
+.icon-btn { all: unset; cursor: pointer; width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 10px; flex: none; }
+.icon-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.icon-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+@media (max-width: 640px) { .brand { display: none; } }
+
+/* Hero */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px 56px;
+  padding-block: clamp(36px, 7vw, 88px) clamp(40px, 6vw, 72px);
+}
+.display {
+  font-family: var(--font-display); font-weight: 900; font-stretch: 108%;
+  text-transform: uppercase; letter-spacing: -.035em; line-height: .88; margin: 0; overflow-wrap: break-word;
+}
+.hero h1 { font-size: clamp(34px, 6.2vw, 100px); }
+.hero-left { display: grid; gap: 26px; align-content: start; min-width: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.mosaic { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; aspect-ratio: 16/9; max-width: 100%; overflow: hidden; }
+.mosaic img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.hero-note { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px 48px; align-items: start; }
+.hero-note .arrow { font-size: 22px; line-height: 1; }
+.hero-right { display: grid; gap: 20px; justify-items: end; text-align: right; align-content: space-between; min-width: 0; }
+.hero-right .meta { display: grid; gap: 6px; justify-items: end; }
+.hero-right .claim { display: grid; gap: 10px; justify-items: end; max-width: 36ch; }
+.hero-right .name { font-size: clamp(40px, 6vw, 112px); }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+  padding: 12px 18px; border: 1px solid var(--ink); border-radius: 999px;
+  font: 400 11px/1 var(--font-mono); letter-spacing: .14em; text-transform: uppercase;
+  transition: background .15s, color .15s;
+}
+.btn:hover { background: var(--ink); color: var(--bg); }
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero-right { justify-items: start; text-align: left; }
+  .hero-right .meta, .hero-right .claim { justify-items: start; }
+}
+
+/* Letreiro */
+.marquee {
+  margin-inline: calc(var(--gutter) * -1); border-block: 1px solid var(--line);
+  overflow: hidden; padding-block: 14px; white-space: nowrap;
+}
+.marquee-track { display: inline-flex; animation: slide 38s linear infinite; }
+.marquee span { font: 400 12px var(--font-mono); letter-spacing: .16em; text-transform: uppercase; padding-inline: 18px; }
+.marquee span::after { content: "•"; margin-left: 36px; color: var(--muted); }
+@keyframes slide { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+/* Temas */
+.theme { padding-block: clamp(64px, 10vw, 128px) 0; display: grid; gap: clamp(36px, 5vw, 64px); }
+.theme-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: 20px 48px; align-items: end; }
+.theme-head .label { display: flex; gap: 16px; align-items: center; margin-bottom: 14px; }
+.theme-head .label::after { content: ""; height: 1px; background: var(--line); flex: 1; max-width: 160px; }
+.theme-head h2 { font-size: clamp(36px, 9vw, 128px); }
+.theme-head p { margin: 0; color: var(--muted); font-size: 15px; }
+.theme-head .chips { margin-top: 16px; }
+@media (max-width: 860px) { .theme-head { grid-template-columns: minmax(0, 1fr); } }
+
+.project {
+  display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 24px 48px;
+  border-top: 1px solid var(--line); padding-top: 22px;
+}
+.project-info { position: sticky; top: 76px; align-self: start; display: grid; gap: 14px; }
+.project-info h3 { font-size: clamp(26px, 2.8vw, 38px); line-height: .92; }
+.project-cat { color: var(--ink); }
+.project-info p { margin: 0; color: var(--muted); font-size: 14.5px; max-width: 46ch; }
+.project-info .chips { gap: 6px; }
+.project-info .chip { padding: 6px 10px; font-size: 10px; }
+@media (max-width: 860px) { .project { grid-template-columns: minmax(0, 1fr); } .project-info { position: static; } }
+
+.strip { display: flex; flex-wrap: wrap; gap: 10px; min-width: 0; }
+.piece {
+  all: unset; cursor: zoom-in; position: relative; display: block;
+  height: var(--strip-h); aspect-ratio: var(--ar); max-width: 100%;
+  border-radius: 4px; overflow: hidden; background: var(--surface);
+}
+.piece img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2,.7,.2,1), filter .3s; }
+.piece:hover img { transform: scale(1.035); }
+.piece:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.piece .fmt {
+  position: absolute; left: 8px; bottom: 8px; font: 400 9.5px/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase;
+  background: rgba(14,14,14,.72); color: #F2F0EB; padding: 5px 7px; border-radius: 999px;
+}
+.piece.logo { background: var(--logo-ground); }
+.piece.logo img { object-fit: contain; padding: 12%; }
+.piece.white { background: var(--logo-ground); }
+.piece.white img { object-fit: contain; }
+@media (prefers-reduced-motion: reduce) { .piece img { transition: none; } .piece:hover img { transform: none; } }
+@media (max-width: 520px) { :root { --strip-h: 240px; } .strip { gap: 8px; } }
+
+/* Toolkit P de Pets — cores da marca fixas nos dois temas, porque é a arte do cliente */
+.pp-wrap { container-type: inline-size; min-width: 0; }
+.pp-board {
+  --pp-orange: #EB7A01; --pp-sky: #76C3F9; --pp-night: #1C005D; --pp-pata: #659BFD; --pp-yellow: #FDB127; --pp-cream: #FFF7EC; --pp-white: #FFFFFF;
+  --pp-serif: "Abril Fatface", Georgia, "Times New Roman", serif;
+  --pp-sans: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px;
+  background: var(--pp-white); padding: 10px; border-radius: 18px; color: var(--pp-night);
+  font-family: var(--pp-sans);
+}
+.pp-board img { display: block; }
+.pp-card { border-radius: 14px; overflow: hidden; padding: 18px; position: relative; min-width: 0; background: var(--pp-cream); }
+.pp-serif { font-family: var(--pp-serif); font-weight: 400; }
+.pp-sans { font-family: var(--pp-sans); }
+.pp-kicker { display: block; font: 700 11px/1 var(--pp-sans); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 16px; }
+.pp-smile { display: inline-block; width: 24px; height: 10px; border: 3px solid currentColor; border-top: 0; border-radius: 0 0 24px 24px; margin-left: 8px; vertical-align: middle; }
+.pp-bg-orange { background: var(--pp-orange); color: var(--pp-white); }
+.pp-bg-sky { background: var(--pp-sky); color: var(--pp-night); }
+.pp-bg-night { background: var(--pp-night); color: var(--pp-white); }
+.pp-bg-pata { background: var(--pp-pata); color: var(--pp-white); }
+.pp-bg-yellow { background: var(--pp-yellow); color: var(--pp-night); }
+
+.pp-hero { grid-column: span 7; background: var(--pp-sky); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; min-height: 300px; }
+.pp-hero img { width: min(74%, 380px); height: auto; }
+.pp-tag { margin: 0; align-self: flex-end; text-align: right; color: var(--pp-white); font: 800 13px/1.35 var(--pp-sans); letter-spacing: .06em; text-transform: uppercase; }
+.pp-tag .pp-smile { color: var(--pp-night); }
+
+.pp-vars { grid-column: span 5; display: flex; flex-direction: column; }
+.pp-var-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: auto; }
+.pp-var-row figure { margin: 0; display: grid; gap: 8px; }
+.pp-var { aspect-ratio: 1; border-radius: 12px; overflow: hidden; display: grid; place-items: center; }
+.pp-var img { width: 100%; height: 100%; object-fit: contain; padding: 10%; }
+.pp-var-row figcaption { font: 600 11px/1 var(--pp-sans); letter-spacing: .06em; text-transform: uppercase; }
+
+.pp-var-full img { padding: 0; object-fit: cover; }
+
+.pp-palette { grid-column: 1 / -1; }
+.pp-swatches { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.pp-swatches div { display: grid; gap: 6px; }
+.pp-swatches span { height: 72px; border-radius: 10px; box-shadow: inset 0 0 0 1px rgba(28,0,93,.08); }
+.pp-swatches b { font: 600 11px/1.2 var(--pp-sans); }
+.pp-swatches code { font: 400 10.5px/1 var(--pp-sans); letter-spacing: .04em; opacity: .75; }
+
+.pp-photo { padding: 0; }
+.pp-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Banners: pets e humanos no mesmo formato, cada um seguido dos seus produtos */
+.pp-banner { grid-column: 1 / -1; aspect-ratio: 916 / 440; max-width: 100%; }
+.pp-feliz { background: var(--pp-yellow); display: flex; align-items: center; padding: clamp(18px, 5cqi, 48px); }
+.pp-banner-text { position: relative; z-index: 1; }
+.pp-feliz .pp-kicker { color: var(--pp-night); }
+.pp-feliz p { margin: 0; color: var(--pp-white); font-size: clamp(30px, 8.4cqi, 76px); line-height: .98; }
+.pp-feliz img { position: absolute; right: 0; bottom: 0; height: 100%; width: auto; max-width: 56%; object-fit: cover; object-position: left top; }
+
+.pp-product { grid-column: span 4; display: flex; align-items: center; gap: 14px; padding: 12px; }
+.pp-product img { width: 46%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; flex: none; }
+.pp-product-text { display: grid; gap: 6px; min-width: 0; }
+.pp-label { font: 800 12px/1.15 var(--pp-sans); letter-spacing: .05em; text-transform: uppercase; }
+.pp-price { font: 500 11px/1.25 var(--pp-sans); opacity: .85; }
+
+.pp-caminha { grid-column: span 5; min-height: 240px; }
+.pp-caminha img { position: absolute; inset: 0; object-position: center 30%; }
+.pp-badge { position: absolute; left: 12px; bottom: 12px; background: var(--pp-white); color: var(--pp-night); font: 700 11px/1 var(--pp-sans); letter-spacing: .06em; text-transform: uppercase; padding: 7px 10px; border-radius: 999px; }
+.pp-conforto { grid-column: span 7; display: flex; align-items: flex-start; min-height: 240px; }
+.pp-conforto p { margin: 0; max-width: 62%; font-size: clamp(17px, 2.6cqi, 26px); line-height: 1.2; position: relative; z-index: 1; }
+.pp-conforto b { font-weight: 700; display: block; }
+.pp-conforto i { font-weight: 300; }
+.pp-conforto img { position: absolute; right: 0; bottom: 0; width: 38%; height: auto; }
+.pp-carinho { grid-column: 1 / -1; display: flex; align-items: center; }
+.pp-carinho p { margin: 0; color: var(--pp-sky); font-size: clamp(22px, 4.2cqi, 40px); line-height: 1.08; max-width: 22ch; }
+
+.pp-footer { grid-column: 1 / -1; border-radius: 14px; padding: 14px 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; font: 500 11px/1.2 var(--pp-sans); letter-spacing: .08em; text-transform: uppercase; }
+.pp-footer .pp-smile { color: var(--pp-orange); margin: 0; }
+
+@container (max-width: 640px) {
+  .pp-board { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .pp-hero, .pp-vars, .pp-caminha, .pp-conforto { grid-column: 1 / -1; }
+  .pp-hero { min-height: 240px; }
+  .pp-swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pp-banner { aspect-ratio: 4 / 3; }
+  .pp-humanos img { object-position: 30% center; }
+  .pp-product { grid-column: span 2; flex-direction: column; align-items: stretch; }
+  .pp-product img { width: 100%; }
+}
+@container (max-width: 420px) {
+  .pp-product { grid-column: 1 / -1; flex-direction: row; align-items: center; }
+  .pp-product img { width: 40%; }
+}
+/* Toolkit Nutriz Food — reaproveita a grade do toolkit, com as cores e fontes da marca */
+.nz-board {
+  --nz-brown: #8A5628; --nz-green: #477E3A; --nz-purple: #43184E; --nz-orange: #D9772A; --nz-cream: #FFF2D2;
+  --pp-sans: "Nunito", "Helvetica Neue", Arial, sans-serif;
+  --nz-head: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --pp-cream: #FFF7E6; color: var(--nz-brown);
+}
+.nz-board .pp-kicker { font-family: var(--nz-head); font-weight: 800; }
+.nz-bg-purple { background: var(--nz-purple); color: #FFF7E6; }
+.nz-bg-orange { background: var(--nz-orange); color: #FFF7E6; }
+.nz-bg-green { background: var(--nz-green); color: #FFF7E6; }
+.nz-bg-brown { background: var(--nz-brown); color: #FFF7E6; }
+.nz-hero { grid-column: span 7; background: var(--nz-cream); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 22px; min-height: 280px; padding: clamp(20px, 5cqi, 44px); }
+.nz-hero img { width: min(88%, 460px); height: auto; }
+.nz-multiply { mix-blend-mode: multiply; }
+.nz-tag { margin: 0; max-width: 32ch; font: 600 clamp(14px, 1.9cqi, 17px)/1.4 var(--pp-sans); }
+.nz-vars { grid-column: span 5; }
+.nz-var img { padding: 12%; object-fit: contain; }
+.nz-on-white { background: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(138,86,40,.18); }
+.nz-on-brown { background: var(--nz-brown); }
+.nz-on-purple { background: var(--nz-purple); }
+.nz-negative { filter: grayscale(1) invert(1) brightness(3); mix-blend-mode: screen; }
+.nz-palette { grid-column: 1 / -1; }
+.nz-banner { aspect-ratio: 1400 / 788; }
+.nz-spec { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 20px 32px; align-items: stretch; }
+.nz-spec-main { display: flex; flex-direction: column; gap: 4px; }
+.nz-spec-selos { display: flex; flex-direction: column; justify-content: flex-end; }
+.nz-spec-name { font: 800 clamp(26px, 4.4cqi, 40px)/1 var(--nz-head); letter-spacing: .02em; text-transform: uppercase; }
+.nz-spec-role { font: 600 12px/1.3 var(--pp-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.nz-spec-flavor { margin-top: auto; padding-top: 18px; font: 800 16px/1.2 var(--nz-head); text-transform: uppercase; }
+.nz-spec-flavor span { display: block; font: 600 11px/1 var(--pp-sans); letter-spacing: .1em; opacity: .8; margin-bottom: 6px; }
+
+.nz-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.nz-chips span { font: 700 12px/1 var(--pp-sans); padding: 9px 12px; border-radius: 999px; border: 1.5px solid currentColor; }
+.nz-quote { grid-column: 1 / -1; display: flex; align-items: center; }
+.nz-quote p { margin: 0; font: 700 clamp(18px, 2.8cqi, 26px)/1.25 var(--pp-sans); }
+.nz-board .pp-footer { font-family: var(--nz-head); }
+@container (max-width: 640px) {
+  .nz-hero, .nz-vars, .nz-quote { grid-column: 1 / -1; }
+  .nz-spec { grid-template-columns: minmax(0, 1fr); }
+  .nz-banner { aspect-ratio: 1400 / 788; }
+}
+/* Sobre */
+.about { padding-block: clamp(64px, 10vw, 128px) 0; display: grid; gap: clamp(28px, 4vw, 48px); }
+.about .theme-head h2 { font-size: clamp(36px, 7vw, 104px); }
+.about .theme-head p { font-size: 16px; color: var(--ink); max-width: 52ch; }
+.about-grid { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr) minmax(0, 1fr); gap: 32px 48px; border-top: 1px solid var(--line); padding-top: 24px; }
+.about-photo { margin: 0; display: grid; gap: 10px; align-content: start; }
+.about-photo img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 4px; background: #fff; filter: grayscale(1); }
+.about-col { display: grid; gap: 14px; align-content: start; min-width: 0; }
+.about-h { margin: 18px 0 0; font-weight: 500; color: var(--muted); }
+.about-h:first-child { margin-top: 0; }
+.contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.contact li { display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.contact-val { font-weight: 500; overflow-wrap: anywhere; user-select: all; }
+a.contact-val { user-select: auto; text-decoration: none; }
+a.contact-val:hover { text-decoration: underline; }
+.copy { all: unset; cursor: pointer; font: 400 10px/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; }
+.copy:hover { border-color: var(--ink); }
+.copy:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+.timeline li { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 2px 16px; padding-block: 10px; border-bottom: 1px solid var(--line); }
+.timeline li > span { grid-row: span 2; color: var(--muted); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding-top: 3px; font-variant-numeric: tabular-nums; }
+.timeline b { font-weight: 600; }
+.timeline em { font-style: normal; color: var(--muted); font-size: 14px; }
+.about-note { margin: 0; font-size: 14px; }
+.footer-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; font-size: clamp(16px, 2vw, 22px); }
+@media (max-width: 960px) { .about-grid { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); } .about-grid > .about-col:last-child { grid-column: 1 / -1; } }
+@media (max-width: 640px) { .about-grid { grid-template-columns: minmax(0, 1fr); } .about-photo { max-width: 220px; } .timeline li { grid-template-columns: 104px minmax(0, 1fr); } }
+/* Currículo no topo */
+.hero-cv { gap: 22px; }
+.cv-intro { display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 1fr); gap: 20px 28px; align-items: start; }
+.cv-bio { margin: 0; font-size: clamp(15px, 1.3vw, 17px); max-width: 52ch; }
+.cv-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: clamp(40px, 6vw, 72px); }
+@media (max-width: 960px) { .cv-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cv-grid > .about-col:last-child { grid-column: 1 / -1; } }
+@media (max-width: 640px) { .cv-intro { grid-template-columns: minmax(0, 1fr); } .cv-grid { grid-template-columns: minmax(0, 1fr); } }
+.cv-title { display: grid; gap: 10px; }
+.cv-title h1 { font-size: clamp(40px, 6.4vw, 104px); }
+.cv-role { margin: 0; font: 500 clamp(22px, 2.8vw, 40px)/1 var(--font-display); font-stretch: 100%; letter-spacing: -.01em; color: var(--muted); }
+/* Grupos de formato dentro do projeto */
+.groups { display: grid; gap: clamp(28px, 3.4vw, 44px); min-width: 0; }
+.group { display: grid; gap: 12px; min-width: 0; }
+.group-label { display: flex; align-items: center; gap: 12px; }
+.group-label::after { content: ""; flex: 1; height: 1px; background: var(--line); order: 1; }
+.group-label .muted { order: 2; }
+/* Rodapé */
+footer { margin-top: clamp(80px, 12vw, 160px); display: grid; gap: 28px; }
+footer .display { font-size: clamp(40px, 9vw, 140px); }
+footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); padding-top: 18px; }
+
+/* Cantos fixos */
+.corner {
+  position: fixed; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 6;
+  padding: 7px 11px; border-radius: 999px; background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.corner.left { left: 14px; } .corner.right { right: 14px; font-variant-numeric: tabular-nums; }
+@media (max-width: 640px) { .corner { display: none; } }
+
+/* Visualizador */
+dialog.viewer {
+  border: 0; padding: 0; margin: 0; width: 100%; height: 100%; max-width: none; max-height: none;
+  background: rgba(12,12,11,.95); color: #F2F0EB;
+}
+dialog.viewer::backdrop { background: transparent; }
+.viewer-inner { height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; padding: calc(14px + env(safe-area-inset-top, 0px)) 16px calc(16px + env(safe-area-inset-bottom, 0px)); gap: 12px; }
+.viewer-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; color: #8E8B83; }
+.viewer-stage { display: grid; place-items: center; min-height: 0; }
+.viewer-stage img { max-height: 100%; max-width: 100%; object-fit: contain; border-radius: 4px; }
+.viewer-stage img.logo { background: #fff; padding: 6%; }
+.viewer-cap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; }
+.viewer-cap strong { display: block; font: 800 22px/1 var(--font-display); text-transform: uppercase; letter-spacing: -.02em; margin-bottom: 6px; }
+.viewer-cap span { color: #8E8B83; }
+.vbtn { all: unset; cursor: pointer; font: 400 11px/1 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; padding: 10px 14px; border: 1px solid #3A3833; border-radius: 999px; color: #F2F0EB; }
+.vbtn:hover { border-color: #F2F0EB; }
+.vbtn:focus-visible { outline: 2px solid #F2F0EB; outline-offset: 2px; }
+.vnav { display: flex; gap: 8px; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#inicio">VictóriaSiqueira</a>
+    <nav id="index" aria-label="Temas"></nav>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Alternar tema claro/escuro">
+      <svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="wrap" id="inicio">
+  <section class="hero" id="sobre">
+    <div class="hero-left hero-cv">
+      <div class="cv-title"><h1 class="display">Victória Siqueira</h1><p class="cv-role">Designer</p></div>
+      <div class="cv-intro">
+        <figure class="about-photo">
+          <img src="img/victoria.jpg" alt="Retrato de Victória Siqueira" width="252" height="252">
+          <figcaption class="mono muted">Designer · Recife, PE</figcaption>
+        </figure>
+        <div class="about-col">
+          <p class="cv-bio">Designer gráfica formada pela UNIFG, com pós-graduação em Tecnologia, Inovação e Inteligência pela CESAR School. Crio desde 2018 para agências e marcas, do post no feed à embalagem, ao banner de palco e ao modelo 3D.</p>
+          <ul class="contact">
+            <li><span class="mono muted">E-mail</span><span class="contact-val">victoria.siqueiraf@gmail.com</span><button class="copy mono" type="button" data-copy="victoria.siqueiraf@gmail.com">Copiar</button></li>
+            <li><span class="mono muted">Telefone</span><span class="contact-val">(81) 98124-7977</span><button class="copy mono" type="button" data-copy="+5581981247977">Copiar</button></li>
+            <li><span class="mono muted">Behance</span><a class="contact-val" href="https://www.behance.net/victoriasaf" target="_blank" rel="noopener">behance.net/victoriasaf ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="chips"><span class="chip">Social media</span><span class="chip">Direção de arte</span><span class="chip">Identidade visual</span><span class="chip">Embalagem</span><span class="chip">Modelagem 3D</span></div>
+    </div>
+    <div class="hero-right">
+      <div class="meta">
+        <span class="chip"><span class="dot"></span>Disponível para projetos</span>
+        <span class="mono muted" id="stats"></span>
+      </div>
+      <div class="claim">
+        <span class="mono">Artes pensadas para serem lidas rápido, na tela do celular.</span>
+        <span class="mono muted">Feed · Stories · Reels · PDV</span>
+      </div>
+      <span class="mono muted">Portfólio 2026</span>
+      <a class="btn" href="#eventos">Trabalhos selecionados <span aria-hidden="true">↘</span></a>
+    </div>
+  </section>
+
+  <div class="about-grid cv-grid">
+    <div class="about-col">
+      <h3 class="about-h mono">Experiência</h3>
+      <ol class="timeline">
+        <li><span class="mono">Nov 2025 — atual</span><b>Agência Hoax</b></li>
+        <li><span class="mono">Fev — Nov 2025</span><b>EZZE</b><em>Marketing digital e influência</em></li>
+        <li><span class="mono">2022</span><b>P de Pets</b><em>Designer</em></li>
+        <li><span class="mono">2021</span><b>BlackLamb Comunicação</b><em>Designer</em></li>
+        <li><span class="mono">2021</span><b>Maracatu Digital</b><em>Designer</em></li>
+        <li><span class="mono">2018 — 2021</span><b>Agência IOIO</b><em>Designer</em></li>
+      </ol>
+    </div>
+    <div class="about-col">
+      <h3 class="about-h mono">Formação</h3>
+      <ol class="timeline">
+        <li><span class="mono">2020 — 2023</span><b>CESAR School</b><em>Pós-graduação em Tecnologia, Inovação e Inteligência</em></li>
+        <li><span class="mono">2017 — 2020</span><b>UNIFG</b><em>Design Gráfico</em></li>
+      </ol>
+    </div>
+    <div class="about-col">
+      <h3 class="about-h mono">Ferramentas</h3>
+      <div class="chips">
+        <span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">InDesign</span><span class="chip">Figma</span>
+        <span class="chip">Premiere</span><span class="chip">After Effects</span><span class="chip">Blender</span><span class="chip">3ds Max</span>
+      </div>
+      <p class="about-note muted">Edição de foto e vídeo, motion design e modelagem 3D.</p>
+      <h3 class="about-h mono">Idiomas</h3>
+      <div class="chips"><span class="chip">Português · nativo</span><span class="chip">Inglês · intermediário</span><span class="chip">Espanhol · básico</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+<main class="wrap" id="main"></main>
+
+<div class="wrap">
+  <footer>
+    <div class="display">Vamos criar<br>juntos?</div>
+    <div class="footer-contact">
+      <span class="contact-val">victoria.siqueiraf@gmail.com</span><button class="copy mono" type="button" data-copy="victoria.siqueiraf@gmail.com">Copiar e-mail</button>
+      <span class="contact-val">(81) 98124-7977</span>
+      <a class="contact-val" href="https://www.behance.net/victoriasaf" target="_blank" rel="noopener">Behance ↗</a>
+    </div>
+    <div class="row mono muted">
+      <span>Victória Siqueira — design gráfico e social media</span>
+      <span>Clique em uma arte para ampliar · ← → para navegar</span>
+    </div>
+  </footer>
+</div>
+
+<span class="corner left mono">Recife · PE</span>
+<span class="corner right mono" id="clock"></span>
+
+<dialog class="viewer" id="viewer" aria-label="Visualizar arte">
+  <div class="viewer-inner">
+    <div class="viewer-bar mono"><span id="vCount"></span><button class="vbtn" id="vClose" type="button">Fechar</button></div>
+    <div class="viewer-stage"><img id="vImg" alt=""></div>
+    <div class="viewer-cap">
+      <div><strong id="vTitle"></strong><span class="mono" id="vMeta"></span></div>
+      <div class="vnav"><button class="vbtn" id="vPrev" type="button">← Anterior</button><button class="vbtn" id="vNext" type="button">Próxima →</button></div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const FMT = {
+  story: { label: 'Story', size: '1080×1920', ar: '1080/1920' },
+  feed:  { label: 'Feed',  size: '1080×1350', ar: '1080/1350' },
+  feed34:{ label: 'Feed',  size: '1080×1440', ar: '1080/1440' },
+  feedS: { label: 'Feed',  size: '1080×1350', ar: '4/5', small: true },
+  reels: { label: 'Capa de reels', size: '871×1530', ar: '871/1530' },
+  pdv:   { label: 'Mockup PDV', size: '4500×3000', ar: '3/2' },
+  foto:  { label: 'Foto de produto', size: '', ar: null },
+  mockup:{ label: 'Mockup', size: '1322×1340', ar: '1322/1340' },
+  mock:  { label: 'Mockup', size: '', ar: null },
+  palco: { label: 'Banner de palco', size: '', ar: null },
+  evento:{ label: 'Foto do evento', size: '', ar: null },
+  web:   { label: 'Landing page', size: '', ar: null },
+  revista: { label: 'Revista', size: '', ar: null },
+  poster:{ label: 'Pôster', size: '', ar: null },
+  modelo3d: { label: 'Modelagem 3D', size: '', ar: null },
+  emb:   { label: 'Embalagem', size: '', ar: null },
+  ident: { label: 'Identidade', size: '', ar: null },
+  logo:  { label: 'Logo', size: '', ar: null },
+};
+
+const THEMES = [
+  {
+    id: 'eventos', short: 'Eventos', title: 'Eventos & festas',
+    desc: 'Campanhas de venda de ingresso para as festas do Barchef, no Mirante do Paço, em Recife. Cada evento tem identidade própria, e todas as peças têm o mesmo trabalho: avisar que o lote está acabando.',
+    tags: ['Ilustração', 'Colagem', 'Tipografia display', 'Cores saturadas', 'Urgência', 'Banner de palco'],
+    projects: [
+      { name: 'Beerchef', client: 'Evento · Barchef', desc: 'Duas linguagens para o mesmo festival: colagem retrô com globo espelhado e referências de pista, e ilustração pop anos 2000 com fita cassete e celular de teclinha para a edição Rock & Pop.',
+        items: [
+          ['beerchef-virada', 'Virada de lote amanhã', 'story'],
+          ['beerchef-fita', 'Virada de lote · fita cassete', 'story'],
+          ['beerchef-prevenda', 'Pré-venda esgota amanhã', 'story'],
+          ['beerchef-hoje', 'Lote esgota hoje', 'story'],
+          ['beerchef-amanha', 'Lote esgota amanhã', 'story'],
+          ['beerchef-lineup', 'Lote esgota amanhã · line-up', 'story'],
+        ] },
+      { name: 'Ginga Recife', client: 'Evento · Barchef', desc: 'Festa em dia de jogo do Brasil, com Marcelo D2 na programação. Verde e amarelo, retícula de jornal esportivo, gramado e arquibancada ilustrada.',
+        items: [
+          ['ginga-d2', 'Marcelo D2 confirmado', 'story'],
+          ['ginga-lineup', 'Line-up oficial · Brasil x Haiti', 'story'],
+          ['ginga-programacao', 'Programação', 'story'],
+          ['ginga-amanha', 'Lote esgota amanhã', 'story'],
+          ['ginga-hoje', 'Lote esgota hoje', 'story'],
+        ] },
+      { name: 'Samba do Barcha', client: 'Evento · Barchef', otherLabel: 'Palco', desc: 'Evento do Barchef no Mirante do Paço. Ilustração com mesa de bar, pandeiro e vegetação tropical, lettering com cara de cartaz de rua, anúncio dos artistas e banners de palco com a garrafa da Smirnoff, feitos em cinco cores para montar o fundo do palco.',
+        items: [
+          ['samba-ultimos', 'Últimos ingressos disponíveis', 'story'],
+          ['samba-pandeiro', 'Lote esgota amanhã · edição de 1 ano', 'story'],
+          ['p25/samba-deb-lima', 'Deb Lima no line-up', 'story'],
+          ['p25/samba-math-gomes', 'Math Gomes no line-up', 'story'],
+          ['p25/samba-quem-deixar', 'Quem deixar pra depois vai dançar do lado de fora', 'story'],
+          ['samba-promo', 'Lote promocional disponível', 'story'],
+          ['p25/samba-banner-verde', 'Banner de palco · verde', 'palco', '190/584'],
+          ['p25/samba-banner-rosa', 'Banner de palco · rosa', 'palco', '190/584'],
+          ['p25/samba-banner-vermelho', 'Banner de palco · vermelho', 'palco', '189/584'],
+          ['p25/samba-palco', 'Banners montados no palco', 'evento', '642/443'],
+        ] },
+    ],
+  },
+  {
+    id: 'gastronomia', short: 'Gastronomia', title: 'Gastronomia',
+    desc: 'Comunicação para restaurantes e cafés guiada pela fotografia do prato. Texto curto, espaço para a comida respirar e um detalhe de marca em cada peça: lettering, ilustração em traço ou a assinatura do restaurante.',
+    tags: ['Food styling', 'Fotografia de prato', 'Ilustração em traço', 'Stories', 'Humor'],
+    projects: [
+      { name: 'Akira', client: 'Restaurante japonês', desc: 'Apresentação de pratos, avisos de horário e campanhas semanais como a Quarta do Ramen e o Sextou, este com o Naruto sentado no salão. No feed, o cartaz do evento Conexão Akira Japão, com apresentação de taiko sobre o círculo vermelho e pinceladas de nanquim.',
+        items: [
+          ['akira-oniguiri-story', 'Oniguiri de salmão', 'story'],
+          ['akira-okonomiyaki-story', 'Okonomiyaki', 'story'],
+          ['akira-quarta', 'Quarta do Ramen', 'story'],
+          ['akira-sextou', 'Sextou no Akira Ramen', 'story'],
+          ['akira-abertos', 'Estamos abertos · domingo', 'story'],
+          ['akira-conexao-japao', 'Conexão Akira Japão', 'feed'],
+        ] },
+      { name: 'Lucinha Cascão', client: 'Café', desc: 'Posts de cardápio e datas comemorativas. Fotografia clara, lettering vazado no Dia do Café e setas desenhadas à mão apontando cada item do pedido.',
+        items: [
+          ['p25/lucinha-dia-do-cafe', 'Dia Mundial do Café', 'feed', '403/469'],
+          ['p25/lucinha-refrescante', 'Simplesmente refrescante', 'feed', '387/469'],
+          ['p25/lucinha-banoffee', 'Banoffee e cappuccino', 'feed', '379/474'],
+        ] },
+      { name: 'Xerém Marisqueira', client: 'Restaurante de frutos do mar', desc: 'Feed com a assinatura manuscrita do restaurante sobre fotos de pratos vistos de cima, com chamadas como Happy Hour e Happy Wine.',
+        items: [
+          ['p25/xerem-happy-hour', 'Happy Hour', 'feedS'],
+          ['p25/xerem-camarao', 'Camarão', 'feedS'],
+          ['p25/xerem-peixe', 'Peixe com legumes', 'feedS'],
+          ['p25/xerem-happy-wine', 'Happy Wine', 'feedS'],
+          ['p25/xerem-prato', 'Prato da casa', 'feedS'],
+        ] },
+    ],
+  },
+  {
+    id: 'saude', short: 'Saúde', title: 'Saúde & bem-estar',
+    desc: 'Conteúdo para profissionais e marcas de saúde. Paleta contida, muito respiro e tipografia leve, para informar sem assustar e passar confiança.',
+    tags: ['Retrato', 'Conteúdo educativo', 'Carrossel', 'Tipografia leve', 'Impresso', 'Ponto de venda'],
+    projects: [
+      { name: 'Helena Rios Dermatologia', client: 'Dermatologista', desc: 'Capas de reels com retrato da médica e títulos curtos, e carrosséis educativos sobre pele com close de rosto e perguntas diretas: adesivos para espinha, rosácea, protetor solar, barba e esfoliação.',
+        items: [
+          ['helena-lipedema', 'Lipedema: cuidado além da estética', 'story'],
+          ['helena-bomdiape', 'Entrevista Bom Dia PE', 'story'],
+          ['helena-outubrorosa', 'Outubro Rosa', 'story'],
+          ['helena-tecnologias', 'Tecnologias da beleza', 'reels'],
+          ['p25/helena-adesivos', 'Adesivos para espinha funcionam?', 'feedS'],
+          ['p25/helena-rosacea', 'Rosácea ou pele sensível?', 'feedS'],
+          ['p25/helena-fps', 'FPS: quanto maior, melhor?', 'feedS'],
+          ['p25/helena-barba', 'Barba bem cuidada', 'feedS'],
+          ['p25/helena-esfoliar', 'Preciso mesmo esfoliar o corpo?', 'feedS'],
+        ] },
+      { name: 'Aryanny Feijó', client: 'Estética e bem-estar', desc: 'Carrosséis para uma clínica de estética em tons de nude e marrom, com serifada fina nos títulos e botões de chamada para agendar a avaliação.',
+        items: [
+          ['p25/aryanny-nova-fase', 'Nova fase, novos propósitos', 'feed', '300/377'],
+          ['p25/aryanny-autoestima', 'Cuidar da saúde e autoestima', 'feed', '300/376'],
+          ['p25/aryanny-flacidez', 'Perdi peso e fiquei com a pele flácida', 'feed', '299/377'],
+          ['p25/aryanny-bem-estar', 'Seu bem-estar em primeiro lugar', 'feed', '300/377'],
+        ] },
+      { name: 'Leoncio Sidrim', client: 'Cardiologista', desc: 'Stories em azul e roxo com o médico em destaque, respondendo dúvidas comuns: cardiologista jovem, exames antes da academia, Dia Mundial da Saúde e como medir a pressão em casa.',
+        items: [
+          ['p25/leoncio-cardiologista-jovem', 'Confiar em um cardiologista jovem?', 'story'],
+          ['p25/leoncio-academia', 'Academia sem exames cardiológicos?', 'story'],
+          ['p25/leoncio-dia-da-saude', 'Dia Mundial da Saúde', 'story'],
+          ['p25/leoncio-hipertensao', 'Hipertensão: medir a pressão em casa', 'story'],
+        ] },
+      { name: 'BariUp', client: 'Cirurgia bariátrica', desc: 'Posts educativos com imagem de impacto: um joelho em 3D para falar de obesidade e o prato bariátrico com as proporções de cada grupo.',
+        items: [
+          ['bariup-joelhos-story', 'Obesidade e joelhos', 'story'],
+          ['bariup-prato-story', 'O prato bariátrico', 'story'],
+        ] },
+      { name: 'Terranutri', client: 'Suplementos naturais', otherLabel: 'Impresso, web e PDV', desc: 'Lançamento das linhas Nutri Immune e Nutri Food, do Instagram à gôndola. Nas redes, produto na mão, natureza ao fundo e ingredientes explicados em callouts. Fora delas, folder, banner da landing page, testeira e wobbler com o slogan "Nutrição inteligente para o seu dia a dia".',
+        items: [
+          ['terranutri-immune-story', 'Nutri Immune', 'story'],
+          ['terranutri-ingredientes-story', 'Ingredientes do Nutri Immune', 'story'],
+          ['terranutri-lembrete', 'Lembrete: imunidade forte', 'feed'],
+          ['terranutri-food', 'Nutri Food: seu corpo sente', 'feed'],
+          ['terranutri-chamando', 'Escolhas simples, resultados reais', 'feed34'],
+          ['p25/terranutri-vai-alem', 'Nutri Food vai além do sabor', 'feed', '314/396'],
+          ['p25/terranutri-seu-corpo', 'Seu corpo sente quando você começa a se nutrir', 'feed', '315/393'],
+          ['p25/terranutri-whey', 'Muito mais que um whey', 'feed', '315/392'],
+          ['p25/terranutri-shake', 'Shake pronto em menos de 1 minuto', 'feed', '315/395'],
+          ['p25/terranutri-folder', 'Folder', 'mock', '674/390'],
+          ['p25/terranutri-landing', 'Banner da landing page', 'web', '673/389'],
+          ['terranutri-pdv', 'Testeira e wobbler', 'pdv'],
+          ['terranutri-testeira', 'Testeira de gôndola', 'pdv'],
+          ['terranutri-wobbler', 'Wobbler circular', 'pdv'],
+        ] },
+    ],
+  },
+  {
+    id: 'marca', short: 'Marca & produto', title: 'Marca & produto',
+    desc: 'Trabalhos que vão além do feed: identidade visual, embalagem, estampas, peças de roupa e modelagem 3D.',
+    tags: ['Identidade visual', 'Embalagem', 'Estampa', 'Merch', 'Logotipo', 'Modelagem 3D'],
+    projects: [
+      { name: 'Hoax', client: 'Agência · merch', desc: 'Ecobag "Creative Soul", camiseta com grade de mandalas geométricas e boné bordado. Mockup e fotos da coleção.',
+        items: [
+          ['hoax-bag-mockup', 'Ecobag Creative Soul · mockup', 'mockup'],
+          ['hoax-bag-01', 'Ecobag Creative Soul', 'foto', '1170/1668'],
+          ['hoax-bag-02', 'Ecobag Creative Soul', 'foto', '1170/1626'],
+          ['hoax-camisa', 'Camiseta mandalas', 'foto', '1169/1635'],
+          ['hoax-camisa-bone-01', 'Camiseta e boné', 'foto', '1170/1473'],
+          ['hoax-camisa-bone-02', 'Camiseta e boné', 'foto', '1169/1565'],
+          ['hoax-bone-01', 'Boné bordado', 'foto', '1170/1562'],
+          ['hoax-bone-02', 'Boné bordado', 'foto', '1169/1249'],
+        ] },
+      { name: 'Nutriz Food', client: 'Superfood · marca e embalagem', desc: 'Marca para uma linha de shakes naturais: logotipo com a folha no pingo do i, paleta terrosa com uma cor para cada sabor e embalagens stand-up com os selos de vegano, zero aditivos e rico em fibras. Cada produto ganhou uma peça de campanha própria.',
+        chips: ['Logotipo', 'Paleta', 'Embalagem', 'Campanha'],
+        items: [],
+        board: nutrizBoard },
+      { name: 'Fresh Coolra', client: 'Bebida · marca e embalagem', desc: 'Ice tea com lettering amarelo de traço arredondado e um smile como assinatura. Na lata do sabor limão com hortelã, gotas geladas sobre o alumínio e o nome do sabor repetido em ondas no fundo verde.',
+        items: [
+          ['p25/fresh-coolra-logo', 'Logotipo Fresh Coolra', 'ident', '1440/884'],
+          ['p25/fresh-coolra-lata', 'Lata Ice Tea Lemon Mint', 'emb', '1440/899'],
+        ] },
+      { name: 'Display de mesa iFood', client: 'Delivery · modelagem 3D', desc: 'Modelo 3D de um display de mesa "Tô no iFood" com toldo recortado e base inclinada, para mostrar a peça antes da produção.',
+        items: [
+          ['p25/ifood-display', 'Display "Tô no iFood"', 'modelo3d', '840/550'],
+        ] },
+    ],
+  },
+  {
+    id: 'editorial', short: 'Editorial', title: 'Editorial & pôster',
+    desc: 'Projetos de diagramação e cartaz, em que a tipografia e a imagem dividem a página.',
+    tags: ['Diagramação', 'Revista', 'Pôster', 'Tipografia', 'Impresso'],
+    projects: [
+      { name: 'Revista Avante-Gard', client: 'Projeto editorial', desc: 'Revista sobre arte moderna. O sumário é uma grade de cores com números grandes, e as matérias sobre O Grito e A Noite Estrelada pegam a paleta de cada quadro para a página.',
+        items: [
+          ['p25/revista-sumario', 'Sumário', 'revista', '460/360'],
+          ['p25/revista-o-grito', 'O Grito', 'revista', '442/360'],
+          ['p25/revista-noite-estrelada', 'A Noite Estrelada', 'revista', '455/360'],
+        ] },
+      { name: 'Real Fight Club', client: 'Pôster', desc: 'Pôster tipográfico em vermelho com ondas em op art ao fundo e um boxeador recortado passando por cima do título. Arte e mockup emoldurado.',
+        items: [
+          ['p25/fightclub-poster', 'Pôster Real Fight Club', 'poster', '443/621'],
+          ['p25/fightclub-mockup', 'Pôster emoldurado · mockup', 'poster', '788/665'],
+        ] },
+    ],
+  },
+];
+
+function petsBoard() {
+  const I = n => `img/pets/${n}${n.includes('.') ? '' : '.jpg'}`;
+  const swatches = [
+    ['Laranja', '#EB7A01'], ['Azul-céu', '#76C3F9'], ['Roxo-noite', '#1C005D'], ['Azul-pata', '#659BFD'], ['Amarelo', '#FDB127'],
+  ];
+  const product = (cls, label, img, price) => `<div class="pp-card pp-product ${cls}">
+      <img src="${I(img)}" alt="${label}" loading="lazy"><div class="pp-product-text"><span class="pp-label">${label}</span><span class="pp-price">${price}</span></div></div>`;
+  return `<div class="pp-board" aria-label="Toolkit de marca P de Pets">
+    <div class="pp-card pp-hero">
+      <img src="${I('logo.png')}" alt="Logotipo P de Pets" loading="lazy">
+      <p class="pp-tag">Aqui seu pet tem<br>conforto e segurança.<span class="pp-smile"></span></p>
+    </div>
+    <div class="pp-card pp-vars">
+      <span class="pp-kicker">Variações de marca</span>
+      <div class="pp-var-row">
+        <figure><div class="pp-var pp-bg-sky"><img src="${I('logo.png')}" alt="" loading="lazy"></div><figcaption>Logotipo</figcaption></figure>
+        <figure><div class="pp-var pp-var-full pp-bg-night"><img src="${I('icone.png')}" alt="" loading="lazy"></div><figcaption>Ícone</figcaption></figure>
+        <figure><div class="pp-var pp-bg-orange"><img src="${I('doodle.png')}" alt="" loading="lazy"></div><figcaption>Mascote</figcaption></figure>
+      </div>
+    </div>
+    <div class="pp-card pp-palette">
+      <span class="pp-kicker">Paleta de cores</span>
+      <div class="pp-swatches">${swatches.map(([n, h]) => `<div><span style="background:${h}"></span><b>${n}</b><code>${h}</code></div>`).join('')}</div>
+    </div>
+    <div class="pp-card pp-banner pp-feliz">
+      <div class="pp-banner-text"><span class="pp-kicker">Para os pets</span><p class="pp-serif">Aqui tem<br>pet feliz!</p></div>
+      <img src="${I('cao-hero')}" alt="Cachorro sorrindo sobre fundo amarelo" loading="lazy">
+    </div>
+    ${product('pp-bg-orange', 'Conjunto', 'p-conjunto', 'Guia + peitoral · R$ 70')}
+    ${product('pp-bg-sky', 'Mochila canguru', 'p-mochila', 'R$ 95')}
+    ${product('pp-bg-yellow', 'Caminha dupla face', 'p-caminha', 'R$ 55')}
+    <div class="pp-card pp-banner pp-photo pp-humanos"><img src="${I('humanos')}" alt="Para os humanos: tutor e cachorro na praia com camiseta Pet Friendly" loading="lazy"></div>
+    ${product('pp-bg-pata', 'Camisa Pet Friendly', 'p-camisa', 'R$ 75')}
+    ${product('pp-bg-night', 'Sacola ecológica', 'p-sacola', 'R$ 40')}
+    ${product('pp-bg-sky', 'Boné P de Pets', 'p-bone', 'R$ 35')}
+    <div class="pp-card pp-photo pp-caminha"><img src="${I('caminha')}" alt="Cachorro na caminha P de Pets" loading="lazy"><span class="pp-badge">Caminha P de Pets</span></div>
+    <div class="pp-card pp-conforto pp-bg-orange">
+      <p class="pp-sans"><b>Aqui seu pet tem conforto e segurança</b> <i>sem precisar sair da caminha dele!</i></p>
+      <img src="${I('doodle.png')}" alt="" loading="lazy">
+    </div>
+    <div class="pp-card pp-carinho pp-bg-night"><p class="pp-serif">Pensado com carinho para o seu pet abanar o rabinho!</p></div>
+    <div class="pp-footer pp-bg-night">
+      <span class="pp-smile"></span>
+      <span>Aqui tem <b>pet feliz!</b></span>
+      <span>Toolkit de marca · P de Pets</span>
+      <span>Design: Victória Siqueira</span>
+    </div>
+  </div>`;
+}
+
+function nutrizBoard() {
+  const I = n => `img/nutriz/${n}`;
+  const swatches = [
+    ['Marrom-terra', '#8A5628'], ['Verde-folha', '#477E3A'], ['Roxo-açaí', '#43184E'], ['Laranja-canela', '#D9772A'], ['Creme', '#FFF2D2'],
+  ];
+  const selos = ['Vegano', 'Zero aditivos', 'Rico em fibras', 'Ingredientes puros', 'Orgânico Brasil'];
+  const spec = (cls, name, role, flavor) => `<div class="pp-card nz-spec ${cls}">
+      <div class="nz-spec-main">
+        <span class="pp-kicker">Embalagem · 300 g</span>
+        <div class="nz-spec-name">${name}</div>
+        <div class="nz-spec-role">${role}</div>
+        <div class="nz-spec-flavor"><span>Sabor</span>${flavor}</div>
+      </div>
+      <div class="nz-spec-selos">
+        <span class="pp-kicker">Selos</span>
+        <div class="nz-chips">${selos.map(s => `<span>${s}</span>`).join('')}</div>
+      </div>
+    </div>`;
+  return `<div class="pp-board nz-board" aria-label="Toolkit de marca Nutriz Food">
+    <div class="pp-card nz-hero">
+      <img class="nz-multiply" src="${I('logo.png')}" alt="Logotipo Nutriz Superfood" loading="lazy">
+      <p class="nz-tag">Shake natural para quem busca praticidade e saúde no dia a dia.</p>
+    </div>
+    <div class="pp-card pp-vars nz-vars">
+      <span class="pp-kicker">Variações de marca</span>
+      <div class="pp-var-row">
+        <figure><div class="pp-var nz-var nz-on-white"><img src="${I('logo.png')}" alt="" loading="lazy"></div><figcaption>Principal</figcaption></figure>
+        <figure><div class="pp-var nz-var nz-on-brown"><img class="nz-negative" src="${I('logo.png')}" alt="" loading="lazy"></div><figcaption>Negativo</figcaption></figure>
+        <figure><div class="pp-var nz-var nz-on-purple"><img class="nz-negative" src="${I('logo.png')}" alt="" loading="lazy"></div><figcaption>Sobre cor</figcaption></figure>
+      </div>
+    </div>
+    <div class="pp-card pp-palette nz-palette">
+      <span class="pp-kicker">Paleta de cores</span>
+      <div class="pp-swatches">${swatches.map(([n, h]) => `<div><span style="background:${h}"></span><b>${n}</b><code>${h}</code></div>`).join('')}</div>
+    </div>
+    <div class="pp-card pp-banner pp-photo nz-banner"><img src="${I('wakeup.jpg')}" alt="Embalagem Nutriz Wake Up, sabor açaí e banana, com o texto Descubra o equilíbrio perfeito entre nutrição e sabor" loading="lazy"></div>
+    ${spec('nz-bg-purple', 'Wake Up', 'Primeira refeição', 'Açaí e banana')}
+    <div class="pp-card pp-banner pp-photo nz-banner"><img src="${I('energy.jpg')}" alt="Embalagem Nutriz Energy, sabor banana e canela, com o texto Saciedade no seu dia a dia" loading="lazy"></div>
+    ${spec('nz-bg-orange', 'Energy', 'Dia a dia', 'Banana e canela')}
+    <div class="pp-card nz-quote nz-bg-green">
+      <p>“Perfeito para o café da manhã ou qualquer momento em que você precisar de energia e bem-estar.”</p>
+    </div>
+    <div class="pp-footer nz-bg-brown">
+      <span>Nutriz <b>Superfood</b></span>
+      <span>Branding e embalagem</span>
+      <span>Design: Victória Siqueira</span>
+    </div>
+  </div>`;
+}
+
+const all = [];
+const main = document.getElementById('main');
+const index = document.getElementById('index');
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const pad = n => String(n).padStart(2, '0');
+
+// Ordem de destaque: temas e projetos mais fortes primeiro
+const DESTAQUE = {
+  eventos: ['Samba do Barcha', 'Ginga Recife', 'Beerchef'],
+  marca: ['Nutriz Food', 'Fresh Coolra', 'Hoax', 'Display de mesa iFood'],
+  gastronomia: ['Akira', 'Lucinha Cascão', 'Xerém Marisqueira'],
+  saude: ['Terranutri', 'Helena Rios Dermatologia', 'Aryanny Feijó', 'Leoncio Sidrim', 'BariUp'],
+  editorial: ['Real Fight Club', 'Revista Avante-Gard'],
+};
+const rank = (list, v) => { const i = list.indexOf(v); return i < 0 ? list.length : i; };
+const themeOrder = Object.keys(DESTAQUE);
+THEMES.sort((a, b) => rank(themeOrder, a.id) - rank(themeOrder, b.id));
+THEMES.forEach(t => t.projects.sort((a, b) => rank(DESTAQUE[t.id] || [], a.name) - rank(DESTAQUE[t.id] || [], b.name)));
+
+THEMES.forEach((t, ti) => {
+  let count = 0;
+  const projectsHtml = t.projects.map((p, pi) => {
+    if (p.board) {
+      count++;
+      return `<article class="project">
+      <div class="project-info">
+        <span class="mono muted">${pad(pi + 1)} / ${pad(t.projects.length)}</span>
+        <h3 class="display">${esc(p.name)}</h3>
+        <span class="project-cat mono">${esc(p.client)}</span>
+      </div>
+      <div class="pp-wrap">${p.board()}</div></article>`;
+    }
+    const piece = ([file, title, fmt, ar, ext]) => {
+      const f = FMT[fmt];
+      const i = all.length;
+      count++;
+      all.push({ src: `img/${file}.${ext || 'jpg'}`, title, fmt: f, project: p.name, logo: fmt === 'logo' });
+      const meta = f.size ? `${f.label} · ${f.size}` : f.label;
+      return `<button class="piece${fmt === 'logo' ? ' logo' : ''}${f.white ? ' white' : ''}" type="button" data-i="${i}" style="--ar:${ar || f.ar}${f.small ? ";height:calc(var(--strip-h) * .62)" : ""}" aria-label="${esc(p.name + ': ' + title + ' (' + meta + ')')}">
+        <img src="img/${file}.${ext || 'jpg'}" alt="" loading="lazy" decoding="async">
+        <span class="fmt">${esc(f.label)}</span></button>`;
+    };
+    // Separa as peças por formato: stories, feed e o que fica fora do Instagram
+    const kind = fmt => ['story', 'reels'].includes(fmt) ? 'story' : ['feed', 'feed34', 'feedS'].includes(fmt) ? 'feed' : 'outro';
+    const groups = [
+      { key: 'story', label: p.items.some(it => it[2] === 'reels') ? 'Stories e capas de reels' : 'Stories' },
+      { key: 'feed', label: 'Feed' },
+      { key: 'outro', label: p.otherLabel || 'Outras peças' },
+    ].map(g => ({ ...g, items: p.items.filter(it => kind(it[2]) === g.key) })).filter(g => g.items.length);
+    const onlyOther = groups.length === 1 && groups[0].key === 'outro';
+    const strips = groups.map(g => `<div class="group">
+        ${onlyOther ? '' : `<div class="group-label mono"><span>${esc(g.label)}</span><span class="muted">${pad(g.items.length)}</span></div>`}
+        <div class="strip">${g.items.map(piece).join('')}</div>
+      </div>`).join('');
+    return `<article class="project">
+      <div class="project-info">
+        <span class="mono muted">${pad(pi + 1)} / ${pad(t.projects.length)}</span>
+        <h3 class="display">${esc(p.name)}</h3>
+        <span class="project-cat mono">${esc(p.client)}</span>
+      </div>
+      <div class="groups">${strips}</div></article>`;
+  }).join('');
+  main.insertAdjacentHTML('beforeend', `<section class="theme" id="${t.id}" data-short="${esc(t.short)}">
+    <div class="theme-head">
+      <div><div class="label mono muted">${pad(ti + 1)} / ${pad(THEMES.length)}</div><h2 class="display">${esc(t.title)}</h2></div>
+    </div>
+    ${projectsHtml}</section>`);
+  index.insertAdjacentHTML('beforeend', `<a class="chip" href="#${t.id}" data-id="${t.id}">${esc(t.short)} <small>${count}</small></a>`);
+});
+
+index.insertAdjacentHTML('afterbegin', `<a class="chip" href="#sobre" data-id="sobre">Sobre</a>`);
+
+// Copiar contato
+document.addEventListener('click', e => {
+  const b = e.target.closest('.copy'); if (!b) return;
+  const label = b.textContent;
+  const done = ok => { b.textContent = ok ? 'Copiado' : 'Selecione e copie'; setTimeout(() => { b.textContent = label; }, 1800); };
+  const fallback = () => {
+    const val = b.previousElementSibling;
+    const r = document.createRange(); r.selectNodeContents(val);
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); done(false);
+  };
+  try { navigator.clipboard.writeText(b.dataset.copy).then(() => done(true), fallback); } catch (err) { fallback(); }
+});
+const nProjects = THEMES.reduce((n, t) => n + t.projects.length, 0);
+document.getElementById('stats').innerHTML = `${all.length} artes · ${nProjects} projetos · ${THEMES.length} temas`;
+
+// Letreiro com as marcas
+const brands = THEMES.flatMap(t => t.projects.map(p => p.name));
+const run = brands.map(b => `<span>${esc(b)}</span>`).join('');
+document.getElementById('marquee').innerHTML = run + run;
+
+// Tema ativo na barra e no canto
+const links = [...index.querySelectorAll('a')];
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    links.forEach(a => a.classList.toggle('on', a.dataset.id === e.target.id));
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('.theme, #sobre').forEach(s => io.observe(s));
+
+// Relógio
+const clock = document.getElementById('clock');
+const fmtClock = new Intl.DateTimeFormat('pt-BR', { weekday: 'short', hour: '2-digit', minute: '2-digit' });
+const tick = () => { clock.textContent = fmtClock.format(new Date()).replace('.', '').replace(',', ''); };
+tick(); setInterval(tick, 15000);
+
+// Alternar tema
+const root = document.documentElement;
+const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+try { const saved = localStorage.getItem('vs-theme'); if (saved) root.dataset.theme = saved; } catch (e) {}
+document.getElementById('themeBtn').onclick = () => {
+  root.dataset.theme = isDark() ? 'light' : 'dark';
+  try { localStorage.setItem('vs-theme', root.dataset.theme); } catch (e) {}
+};
+
+// Visualizador
+const dlg = document.getElementById('viewer');
+const vImg = document.getElementById('vImg');
+let cur = 0;
+function show(i) {
+  cur = (i + all.length) % all.length;
+  const it = all[cur];
+  vImg.src = it.src; vImg.alt = `${it.project}: ${it.title}`;
+  vImg.classList.toggle('logo', it.logo);
+  document.getElementById('vTitle').textContent = it.title;
+  document.getElementById('vMeta').textContent = [it.project, it.fmt.label, it.fmt.size].filter(Boolean).join(' · ');
+  document.getElementById('vCount').textContent = `${pad(cur + 1)} / ${all.length}`;
+}
+main.addEventListener('click', e => {
+  const b = e.target.closest('.piece'); if (!b) return;
+  show(+b.dataset.i); dlg.showModal();
+});
+document.getElementById('vPrev').onclick = () => show(cur - 1);
+document.getElementById('vNext').onclick = () => show(cur + 1);
+document.getElementById('vClose').onclick = () => dlg.close();
+dlg.addEventListener('click', e => { if (e.target.classList.contains('viewer-stage') || e.target === dlg) dlg.close(); });
+dlg.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') show(cur + 1);
+  if (e.key === 'ArrowLeft') show(cur - 1);
+});
+let tx = null;
+dlg.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+dlg.addEventListener('touchend', e => {
+  if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; tx = null;
+  if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+});
+</script>
+</body>
+</html>
