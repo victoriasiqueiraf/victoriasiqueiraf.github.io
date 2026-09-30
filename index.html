@@ -344,6 +344,11 @@ a.contact-val:hover { text-decoration: underline; }
 .group-label { display: flex; align-items: center; gap: 12px; }
 .group-label::after { content: ""; flex: 1; height: 1px; background: var(--line); order: 1; }
 .group-label .muted { order: 2; }
+/* Destaques no topo */
+.highlights { display: grid; gap: 12px; margin-bottom: clamp(36px, 5vw, 56px); }
+.hl-strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.piece.hl { height: auto; aspect-ratio: 4 / 5; width: 100%; }
+@media (max-width: 860px) { .hl-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 /* Rodapé */
 footer { margin-top: clamp(80px, 12vw, 160px); display: grid; gap: 28px; }
 footer .display { font-size: clamp(40px, 9vw, 140px); }
@@ -422,6 +427,11 @@ dialog.viewer::backdrop { background: transparent; }
       <span class="mono muted">Portfólio 2026</span>
       <a class="btn" href="#eventos">Trabalhos selecionados <span aria-hidden="true">↘</span></a>
     </div>
+  </section>
+
+  <section class="highlights" aria-label="Destaques">
+    <div class="group-label mono"><span>Destaques</span><span class="muted" id="hlCount"></span></div>
+    <div class="hl-strip" id="destaques"></div>
   </section>
 
   <div class="about-grid cv-grid">
@@ -869,6 +879,17 @@ document.addEventListener('click', e => {
   };
   try { navigator.clipboard.writeText(b.dataset.copy).then(() => done(true), fallback); } catch (err) { fallback(); }
 });
+
+// Destaques: uma peça forte de cada frente, abre no mesmo visualizador
+const DESTAQUES = ['samba-ultimos', 'akira-conexao-japao', 'p25/fresh-coolra-lata', 'ginga-d2', 'beerchef-virada', 'terranutri-food'];
+const hl = DESTAQUES.map(k => all.findIndex(it => it.src === `img/${k}.jpg`)).filter(i => i >= 0);
+document.getElementById('destaques').innerHTML = hl.map(i => {
+  const it = all[i];
+  return `<button class="piece hl" type="button" data-i="${i}" aria-label="${esc(it.project + ': ' + it.title)}">
+    <img src="${it.src}" alt="" loading="lazy" decoding="async"><span class="fmt">${esc(it.project)}</span></button>`;
+}).join('');
+document.getElementById('hlCount').textContent = pad(hl.length);
+
 const nProjects = THEMES.reduce((n, t) => n + t.projects.length, 0);
 document.getElementById('stats').innerHTML = `${all.length} artes · ${nProjects} projetos · ${THEMES.length} temas`;
 
@@ -915,7 +936,7 @@ function show(i) {
   document.getElementById('vMeta').textContent = [it.project, it.fmt.label, it.fmt.size].filter(Boolean).join(' · ');
   document.getElementById('vCount').textContent = `${pad(cur + 1)} / ${all.length}`;
 }
-main.addEventListener('click', e => {
+document.addEventListener("click", e => {
   const b = e.target.closest('.piece'); if (!b) return;
   show(+b.dataset.i); dlg.showModal();
 });
