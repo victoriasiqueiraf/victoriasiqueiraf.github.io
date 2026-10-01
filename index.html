@@ -652,17 +652,17 @@ const THEMES = [
     projects: [
       { name: 'KOVA', client: 'App de academia · identidade, UI/UX e desenvolvimento', desc: 'Estudo de caso de um app de treino que monta o plano, registra cada série e transforma constância em XP, com níveis, ranking entre amigos e adesivo para o story.',
         items: [
-          ['kova/slide-01', 'Treino que sobe de nível', 'caso'],
-          ['kova/slide-02', 'O problema', 'caso'],
-          ['kova/slide-03', 'Como funciona', 'caso'],
-          ['kova/slide-04', 'Aba Hoje', 'caso'],
-          ['kova/slide-05', 'Aba Plano · modo claro', 'caso'],
-          ['kova/slide-06', 'XP e níveis', 'caso'],
-          ['kova/slide-07', 'Evolução', 'caso'],
-          ['kova/slide-08', 'Aba Amigos', 'caso'],
-          ['kova/slide-09', 'Do treino pro story', 'caso'],
-          ['kova/slide-10', 'Acesso', 'caso'],
-          ['kova/slide-11', 'Bora subir de nível?', 'caso'],
+          ['../slide-01', 'Treino que sobe de nível', 'caso'],
+          ['../slide-02', 'O problema', 'caso'],
+          ['../slide-03', 'Como funciona', 'caso'],
+          ['../slide-04', 'Aba Hoje', 'caso'],
+          ['../slide-05', 'Aba Plano · modo claro', 'caso'],
+          ['../slide-06', 'XP e níveis', 'caso'],
+          ['../slide-07', 'Evolução', 'caso'],
+          ['../slide-08', 'Aba Amigos', 'caso'],
+          ['../slide-09', 'Do treino pro story', 'caso'],
+          ['../slide-10', 'Acesso', 'caso'],
+          ['../slide-11', 'Bora subir de nível?', 'caso'],
         ] },
     ],
   },
@@ -904,7 +904,7 @@ document.addEventListener('click', e => {
 });
 
 // Destaques: uma peça forte de cada frente, abre no mesmo visualizador
-const DESTAQUES = ['samba-ultimos', ['kova/slide-04', 'kova/destaque'], 'akira-conexao-japao', 'p25/fresh-coolra-lata', 'ginga-d2', 'beerchef-virada'];
+const DESTAQUES = ['samba-ultimos', ['../slide-04', '../destaque'], 'akira-conexao-japao', 'p25/fresh-coolra-lata', 'ginga-d2', 'beerchef-virada'];
 const hl = DESTAQUES.map(d => { const [k, thumb] = [].concat(d); return { i: all.findIndex(it => it.src === `img/${k}.jpg`), thumb: thumb && `img/${thumb}.jpg` }; }).filter(h => h.i >= 0);
 document.getElementById("destaques").innerHTML = hl.map(({ i, thumb }) => {
   const it = all[i];
