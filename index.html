@@ -2,10 +2,10 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="Portfólio de Victória Siqueira, designer em Recife: social media, identidade visual, embalagem, eventos e modelagem 3D.">
+<meta name="description" content="Portfólio de Victória Siqueira, designer em Recife: social media, identidade visual, UI/UX, embalagem, eventos e modelagem 3D.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Victória Siqueira · Designer">
-<meta property="og:description" content="Social media, identidade visual, embalagem, eventos e modelagem 3D.">
+<meta property="og:description" content="Social media, identidade visual, UI/UX, embalagem, eventos e modelagem 3D.">
 <meta property="og:url" content="https://victoriasiqueiraf.github.io/">
 <meta property="og:image" content="https://victoriasiqueiraf.github.io/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -519,6 +519,7 @@ const FMT = {
   emb:   { label: 'Embalagem', size: '', ar: null },
   ident: { label: 'Identidade', size: '', ar: null },
   logo:  { label: 'Logo', size: '', ar: null },
+  caso:  { label: 'Estudo de caso', size: '3840×2160', ar: '16/9' },
 };
 
 const THEMES = [
@@ -641,6 +642,27 @@ const THEMES = [
           ['terranutri-pdv', 'Testeira e wobbler', 'pdv'],
           ['terranutri-testeira', 'Testeira de gôndola', 'pdv'],
           ['terranutri-wobbler', 'Wobbler circular', 'pdv'],
+        ] },
+    ],
+  },
+  {
+    id: 'digital', short: 'UI/UX', title: 'UI/UX & app',
+    desc: 'Produto digital do zero: marca, interface e desenvolvimento.',
+    tags: ['UI/UX', 'App', 'Identidade visual', 'Gamificação'],
+    projects: [
+      { name: 'KOVA', client: 'App de academia · identidade, UI/UX e desenvolvimento', desc: 'Estudo de caso de um app de treino que monta o plano, registra cada série e transforma constância em XP, com níveis, ranking entre amigos e adesivo para o story.',
+        items: [
+          ['kova/slide-01', 'Treino que sobe de nível', 'caso'],
+          ['kova/slide-02', 'O problema', 'caso'],
+          ['kova/slide-03', 'Como funciona', 'caso'],
+          ['kova/slide-04', 'Aba Hoje', 'caso'],
+          ['kova/slide-05', 'Aba Plano · modo claro', 'caso'],
+          ['kova/slide-06', 'XP e níveis', 'caso'],
+          ['kova/slide-07', 'Evolução', 'caso'],
+          ['kova/slide-08', 'Aba Amigos', 'caso'],
+          ['kova/slide-09', 'Do treino pro story', 'caso'],
+          ['kova/slide-10', 'Acesso', 'caso'],
+          ['kova/slide-11', 'Bora subir de nível?', 'caso'],
         ] },
     ],
   },
@@ -804,6 +826,7 @@ const pad = n => String(n).padStart(2, '0');
 // Ordem de destaque: temas e projetos mais fortes primeiro
 const DESTAQUE = {
   eventos: ['Samba do Barcha', 'Ginga Recife', 'Beerchef'],
+  digital: ['KOVA'],
   marca: ['Nutriz Food', 'Fresh Coolra', 'Hoax', 'Display de mesa iFood'],
   gastronomia: ['Akira', 'Lucinha Cascão', 'Xerém Marisqueira'],
   saude: ['Terranutri', 'Helena Rios Dermatologia', 'Aryanny Feijó', 'Leoncio Sidrim', 'BariUp'],
@@ -881,12 +904,12 @@ document.addEventListener('click', e => {
 });
 
 // Destaques: uma peça forte de cada frente, abre no mesmo visualizador
-const DESTAQUES = ['samba-ultimos', 'akira-conexao-japao', 'p25/fresh-coolra-lata', 'ginga-d2', 'beerchef-virada', 'terranutri-food'];
-const hl = DESTAQUES.map(k => all.findIndex(it => it.src === `img/${k}.jpg`)).filter(i => i >= 0);
-document.getElementById('destaques').innerHTML = hl.map(i => {
+const DESTAQUES = ['samba-ultimos', ['kova/slide-04', 'kova/destaque'], 'akira-conexao-japao', 'p25/fresh-coolra-lata', 'ginga-d2', 'beerchef-virada'];
+const hl = DESTAQUES.map(d => { const [k, thumb] = [].concat(d); return { i: all.findIndex(it => it.src === `img/${k}.jpg`), thumb: thumb && `img/${thumb}.jpg` }; }).filter(h => h.i >= 0);
+document.getElementById("destaques").innerHTML = hl.map(({ i, thumb }) => {
   const it = all[i];
   return `<button class="piece hl" type="button" data-i="${i}" aria-label="${esc(it.project + ': ' + it.title)}">
-    <img src="${it.src}" alt="" loading="lazy" decoding="async"><span class="fmt">${esc(it.project)}</span></button>`;
+    <img src="${thumb || it.src}" alt="" loading="lazy" decoding="async"><span class="fmt">${esc(it.project)}</span></button>`;
 }).join('');
 document.getElementById('hlCount').textContent = pad(hl.length);
 
